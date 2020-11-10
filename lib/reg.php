@@ -65,15 +65,15 @@ if (!preg_match("/\w{2,}/", $name)) {
         if ($login === $user['login']) {
             $response = [
                 "status" => 'login_repeat',
-                "message" => 'Такой логин занят'
+                "message" => 'Пользователь с таким логином уже зарегистрирован'
             ];
             echo json_encode($response);
             die();   
         } 
-        if ($email === $user['reg_email']) {
+        if ($email === $user['email']) {
             $response = [
                 "status" => 'email_repeat',
-                "message" => 'Такой email занят'
+                "message" => 'Пользователь с таким email уже зарегистрирован'
             ];
             echo json_encode($response);
             die();   
